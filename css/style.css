@@ -1,0 +1,229 @@
+/*
+ * General Reset and Typography
+ */
+:root {
+    --primary-color: #0077b6; /* Professional Blue */
+    --text-color: #333;
+    --secondary-text-color: #555;
+    --background-color: #f8f9fa;
+    --paper-color: #fff;
+    --border-color: #eee;
+    --font-main: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+#resume-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: var(--paper-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+/*
+ * Header/Contact Styles
+ */
+.header {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.header .name {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.header .summary-statement {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+/*
+ * Layout: Two Columns for Desktop
+ */
+.content-body {
+    display: flex;
+    gap: 30px;
+}
+
+.main-column {
+    flex: 3; /* Wider column for experience/main content */
+}
+
+.sidebar-column {
+    flex: 1.5; /* Narrower column for skills/education */
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+/*
+ * Section and Heading Styles
+ */
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/*
+ * Experience Section Styles
+ */
+.job-entry {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.job-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.job-entry h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.job-dates {
+    font-style: italic;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+}
+
+.job-meta {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: var(--secondary-text-color);
+    font-size: 0.95em;
+}
+
+.job-description {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 0.95em;
+}
+
+.job-description li {
+    margin-bottom: 5px;
+}
+
+
+/*
+ * Skills/Competencies/Education Styles (Sidebar & Main)
+ */
+.skills-list {
+    list-style: none;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.skills-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-tag-list span {
+    background-color: var(--primary-color);
+    color: var(--paper-color);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.edu-entry {
+    margin-bottom: 15px;
+}
+
+.edu-entry h3 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.edu-entry p {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+.personal-details p,
+.language-list li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.language-list {
+    list-style: none;
+}
+
+/*
+ * Responsiveness for Mobile/Small Screens
+ */
+@media (max-width: 900px) {
+    #resume-wrapper {
+        margin: 20px;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .content-body {
+        flex-direction: column; /* Stacks columns vertically */
+    }
+
+    .sidebar-column {
+        padding: 15px;
+        order: -1; /* Puts skills/education before experience on mobile */
+    }
+
+    .header .name {
+        font-size: 2em;
+    }
+}
